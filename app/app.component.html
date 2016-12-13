@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- () means we are writing something to/on the app component -->
+            <!-- [] means we are reading something on the app component -->
+            <!-- Template reference variable uses a hash # and variable and refers to the ngForm Directive -->
+            <form class="form-inline" (ngSubmit)="addTask()" #taskForm="ngForm">
+                <div class="form-group">
+                    <label for="content-field" class="sr-only"></label>
+                    <!-- Two Way Data Binding: 
+                         Allows you to write (via input field) and read data (to set it as a card) 
+                         Remember to add the name property to each field
+                    -->
+                    
+                    <input type="text" id="content-field" class="form-control" placeholder="Enter a task..."
+                           name="content" [(ngModel)]="currentTask.content" required>
+                           
+                </div>
+                <button [disabled]="taskForm.form.invalid" type="submit" class="btn btn-primary">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Add Task  
+                </button>
+                <!--This proves that the two-way data binding is working 
+                    Content: {{ currentTask.content }}
+                -->
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- Property binding [task]= -->
+        <!-- ngFor loops through each task -->
+        <app-card *ngFor="let task of tasks" [task]="task"></app-card>
+        <h5 *ngIf="tasks.length === 0">Please enter a task.</h5>
+    </div>
+   
+</div>

@@ -1,0 +1,40 @@
+.card  {
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.card.completed,
+.card.completed .card-footer {
+    background-color: #EEE;
+    cursor: pointer;
+    color: darkslategray;
+}
+
+.card,
+.card-footer {
+    background-color: #FFFFA5;
+    border: none;
+    color: #000;
+}
+
+.card:hover,
+.card:hover .card-footer {
+    background: #F80;
+    color: #000;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.card-footer {
+    text-align: right;
+}
+
+i {
+    color: #CC0000;
+    padding-right: .2rem
+}
+
+i.fa-check {
+    color: lime;
+}

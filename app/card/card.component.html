@@ -1,0 +1,21 @@
+<div class="col-sm-3">       
+    <!-- Class binding based on task card status true or false -->
+    <div class="card" (click)="statusToggle()" [class.completed]="task.completed" >
+        <div class="card-block">
+            <p>{{ task.content }}</p>
+        </div>
+        <div class="card-footer">
+            <!-- ngIf based on task completion boolean -->
+            <span *ngIf="!task.completed">
+                <i class="fa fa-times" aria-hidden="true"></i>Task Incomplete
+            </span>
+            <span *ngIf="task.completed">
+                <i class="fa fa-check" aria-hidden="true"></i>Task Completed
+            </span>
+            
+        </div>
+        <!-- For testing purposes 
+          Completed: {{ task.completed }} 
+        -->
+    </div>
+</div>
